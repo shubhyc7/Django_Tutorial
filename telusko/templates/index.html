@@ -1,0 +1,81 @@
+{% extends 'travellobase.html'%}
+
+{% load static %}
+
+{% static "images" as baseUrl %}
+
+{% block content %}
+<!-- Add your site or app content here -->
+ 
+ <div class="container">
+   <div class="row">
+     <div class="col-xs-12">
+
+          <!-- <div class="card">
+            <div class="card-block">
+              <h2>Projects</h2>
+              <div class="row">
+                
+                <div class="col-md-4">
+                  <img src="{% static 'images/img-04.jpg'%}" class="img-responsive" alt="">
+                  <h3 class="h5">{{dest1.name}}</h3>
+                  <p>Desc : {{dest1.desc}}</p>
+                  <p>Price : {{dest1.price}}</p>
+                </div>
+                
+                <div class="col-md-4">
+                  <img src="{% static 'images/img-02.jpg'%}" class="img-responsive" alt="">
+                  <h3 class="h5">{{dest2.name}}</h3>
+                  <p>Desc : {{dest2.desc}}</p>
+                  <p>Price : {{dest2.price}}</p>
+                </div>
+                
+                <div class="col-md-4">
+                  <img src="{% static 'images/img-03.jpg'%}" class="img-responsive" alt="">
+                  <h3 class="h5">{{dest3.name}}</h3>
+                  <p>Desc : {{dest3.desc}}</p>
+                  <p>Price : {{dest3.price}}</p>
+                </div>
+              
+              </div>
+              
+            </div>
+          </div> -->
+
+          <div class="card">
+            <div class="card-block">
+              <h2>Projects</h2>
+              <div class="row">
+          
+                {% for dest in dests %}
+                <div class="col-md-4">
+                  <!-- <img src="static/images/{{dest.img}}" class="img-responsive" alt=""> -->
+                  
+                  <!-- <img src="media/{{dest.img}}" class="img-responsive" alt=""> -->
+                  
+                  <img src="{{dest.img.url}}" class="img-responsive" alt="">
+                  <h3 class="h5">{{dest.name}} </h3>
+                  <p>Desc : {{dest.desc}}</p>
+                  <p>Price : {{dest.price}}</p>
+
+                  {% if dest.offer %}
+
+                  <h4>( SPECIAL OFFER )</h4>
+                  
+                  {% endif %}
+                
+                </div>
+                {% endfor %}
+              </div>
+          
+            </div>
+          </div>
+       
+     </div>
+   </div>
+ </div>
+
+{% endblock %}
+
+
+

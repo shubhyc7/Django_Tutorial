@@ -1,0 +1,21 @@
+python --version
+
+pip --version
+
+django-admin --version
+
+django-admin startproject telusko
+
+python manage.py runserver
+
+python manage.py startapp cal
+
+python manage.py collectstatic
+
+python manage.py sqlmigrate travello 0001
+
+CREATE TABLE `travello_destination` (`id` bigint AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(100) NOT NULL, `img` varchar(100) NOT NULL, `desc` longtext NOT NULL, `price` integer NOT NULL, `offer` bool NOT NULL);
+
+python manage.py createsuperuser
+
+python manage.py help

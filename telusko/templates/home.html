@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+
+{% block head %}
+  <h1><a href="/travello" class="btn btn-info btn-lg">Travello </a></h1>
+  
+  <h1>Heading</h1>
+{% endblock %}
+
+
+{% block content %}
+
+  <h1>Home Page</h1>
+
+  <h1> {{name}} </h1>    <!--Jinja Pattern -->
+
+
+  <!-- <form action="add">
+    Enter 1st No. <input type="text" name="num1">
+    <br>
+    Enter 2ns No. <input type="text" name="num2">
+    <br>
+    <input type="submit" value="Add">
+  </form> -->
+
+
+  <form action="add" method="POST">
+    {% csrf_token %}
+    Enter 1st No. <input type="text" name="num1">
+    <br>
+    Enter 2ns No. <input type="text" name="num2">
+    <br>
+    <input type="submit" value="Add">
+  </form>
+
+{% endblock %}
+
+
+
+
+
+
